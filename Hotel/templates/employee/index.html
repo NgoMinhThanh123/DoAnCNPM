@@ -1,0 +1,9 @@
+{% extends 'layout/base.html' %}
+{% block content %}
+    <div class="container-xxl bg-white p-0">
+        <h1 class="text-center text-primary mt-5 mb-5" style="padding: 20px 0">TRANG NHÂN VIÊN</h1>
+        {% if current_user.is_authenticated and session['roles'] == 'UserRole.EMPLOYEE' %}
+        <h2 class="text-center" style="padding: 40px 0">Chào mừng <span class="text-info">{{ current_user.name }}</span></h2>
+        {% endif %}
+    </div>
+{% endblock %}
